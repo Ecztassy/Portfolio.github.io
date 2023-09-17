@@ -745,6 +745,14 @@ body {
   min-height: 180px;
 }
 
+.main-service1 {
+  flex: 1; /* Distribute available space equally */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center text horizontally */
+  text-align: center; /* Center text vertically */
+}
+
 .main-service .rectangle {
   position: absolute;
   right: 5px;
@@ -2155,18 +2163,32 @@ body {
 
 /* Sections background: Quote */
 .section-quote {
+  position: relative;
   background: url(../img/tumblr_92d18204db1da70eb06837f33f882c4b_e8af3781_1280.gif) center no-repeat fixed;
   background-size: cover;
+  color: white; /* Set text color to white */
+}
+
+.section-quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 2;
+  pointer-events: none;
 }
 
 .section-quote p {
-  margin-top: 0;
-  font-size: 36px;
+  font-weight: bold; /* Set text to bold */
+  color: white;
+  z-index: 3;
+  font-size: 25px;
 }
 
-.section-quote p span {
-  color: #000000;
-}
+
 
 /* Sections background: Me */
 .section-me {
@@ -2174,49 +2196,34 @@ body {
   background: url(../img/4c2398e6be397bb08b5cb70b2192d730.gif) center no-repeat fixed;
   background-size: cover;
   background-position: center center;
-  color: #fff;
-  /* Text color */
-  padding: 100px 0;
-  /* Adjust padding as needed */
-  text-align: center;
-  /* Center align text horizontally */
-  position: relative;
-  /* Add position relative for absolute positioning of icons */
+  color: #fff; /* Text color */
+  padding: 100px 0; /* Adjust padding as needed */
+  text-align: center; /* Center align text horizontally */
+  position: relative; /* Add position relative for absolute positioning of icons */
 }
 
-.section-me .icons {
-  position: absolute;
-  /* Position icons absolutely within the section */
-  top: 50%;
-  /* Center vertically */
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  /* Adjust to vertically center icons */
+/* Target the social-icons class to center the icons */
+.section-me .social-icons {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .section-me .social-icon {
-  font-size: 36px;
-  /* Increase icon size */
-  margin: 0 20px;
-  /* Add space between icons */
+  font-size: 36px; /* Increase icon size */
+  margin: 0 10px; /* Add space between icons */
 }
 
 .section-me .icon-space {
   display: inline-block;
-  width: 40px;
-  /* Adjust the space width */
+  width: 40px; /* Adjust the space width */
 }
 
 .section-me h2 {
-  margin-top: 20px;
-  /* Add space between icons and h2 */
-  font-size: 30px;
-  /* Adjust the h2 font size */
-  position: absolute;
-  /* Position absolute to move it to the top */
-  top: -20px;
-  /* Adjust the top position */
+  margin-top: 20px; /* Add space between icons and h2 */
+  font-size: 30px; /* Adjust the h2 font size */
+  position: absolute; /* Position absolute to move it to the top */
+  top: -15px; /* Adjust the top position */
   left: 0;
   right: 0;
 }
