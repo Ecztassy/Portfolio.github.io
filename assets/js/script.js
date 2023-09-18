@@ -202,10 +202,15 @@ $(function () {
 
 function adjustLineBreaks() {
     const apoioSection = document.getElementById('apoio-section');
-    const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+    const screenWidth = window.innerWidth;
+    const isTabletPortrait = screenWidth >= 768 && screenWidth <= 1024 && window.matchMedia('(orientation: portrait)').matches;
     const pElement = apoioSection.querySelector('p');
+    const iconElement = apoioSection.querySelector('.fa-check'); // Select the icon element
 
-    if (isPortrait) {
+    if (isTabletPortrait) {
+        // Insert the icon before the <h3> element
+        apoioSection.insertBefore(iconElement, apoioSection.querySelector('h3'));
+
         const lineBreaks = document.createElement('br');
         for (let i = 0; i < 4; i++) {
             pElement.appendChild(lineBreaks.cloneNode());
@@ -216,13 +221,14 @@ function adjustLineBreaks() {
         for (const brElement of lineBreaksToRemove) {
             pElement.removeChild(brElement);
         }
+        // Move the icon back inside the "rectangle" div
+        apoioSection.querySelector('.rectangle').appendChild(iconElement);
     }
 }
 
-// Add and remove line breaks on page load and when the orientation changes
+// Add and remove line breaks on page load and when the screen is resized
 window.addEventListener('load', adjustLineBreaks);
 window.addEventListener('resize', adjustLineBreaks);
-
 
 
 
