@@ -280,6 +280,16 @@ body {
   height: 70px;
   background-color: #000000;
   z-index: 2;
+  left: -100px;
+  @media (max-width: 767px) {
+    left: 0;
+    /* Width for phones */
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    left: 0;
+    /* Width for tablets */
+  }
 }
 
 .site-logo:before {
@@ -335,7 +345,16 @@ body {
 }
 
 .site-navigation .navbar-nav.navbar-right {
-  margin-right: 0;
+  margin-right: -100px;
+  @media (max-width: 767px) {
+    margin-right: 0px;
+    /* Width for phones */
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    margin-right: 0px;
+    /* Width for tablets */
+  }
 }
 
 .site-navigation .navbar-nav>li+li>a {
