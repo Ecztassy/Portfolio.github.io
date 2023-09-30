@@ -414,7 +414,7 @@ body {
 
   .site-navigation .navbar-collapse {
     position: relative;
-    background-color: #292929;
+    background-color: #000000;
     z-index: 99;
     text-align: center;
     border-top: 0;
@@ -451,7 +451,8 @@ body {
 /* Media query for screens with a width of 320px or smaller (e.g., iPhone SE) */
 @media (max-width: 1080px) {
   .hero {
-    background: url(../img/safar-safarov-koOdUvfGr4c-unsplash.jpg) center/100% 100vh no-repeat; /* Adjust background size to fit the screen width and height */
+    background: url(../img/safar-safarov-koOdUvfGr4c-unsplash.jpg) center/100% 100vh no-repeat;
+    /* Adjust background size to fit the screen width and height */
   }
 }
 
@@ -516,7 +517,7 @@ body {
 
 .hero-arrow a {
   font-size: 28px;
-  color: #ffffff;
+  color: #d7d6a0;
 }
 
 @-webkit-keyframes home-arrow-down {
@@ -746,11 +747,14 @@ body {
 }
 
 .main-service1 {
-  flex: 1; /* Distribute available space equally */
+  flex: 1;
+  /* Distribute available space equally */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center text horizontally */
-  text-align: center; /* Center text vertically */
+  align-items: center;
+  /* Center text horizontally */
+  text-align: center;
+  /* Center text vertically */
 }
 
 .main-service .rectangle {
@@ -2166,7 +2170,8 @@ body {
   position: relative;
   background: url(../img/tumblr_92d18204db1da70eb06837f33f882c4b_e8af3781_1280.gif) center no-repeat fixed;
   background-size: cover;
-  color: white; /* Set text color to white */
+  color: white;
+  /* Set text color to white */
 }
 
 .section-quote::before {
@@ -2176,13 +2181,15 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust opacity as needed */
   z-index: 2;
   pointer-events: none;
 }
 
 .section-quote p {
-  font-weight: bold; /* Set text to bold */
+  font-weight: bold;
+  /* Set text to bold */
   color: white;
   z-index: 3;
   font-size: 25px;
@@ -2196,34 +2203,47 @@ body {
   background: url(../img/4c2398e6be397bb08b5cb70b2192d730.gif) center no-repeat fixed;
   background-size: cover;
   background-position: center center;
-  color: #fff; /* Text color */
-  padding: 100px 0; /* Adjust padding as needed */
-  text-align: center; /* Center align text horizontally */
-  position: relative; /* Add position relative for absolute positioning of icons */
+  color: #fff;
+  /* Text color */
+  padding: 100px 0;
+  /* Adjust padding as needed */
+  text-align: center;
+  /* Center align text horizontally */
+  position: relative;
+  /* Add position relative for absolute positioning of icons */
 }
 
 /* Target the social-icons class to center the icons */
 .section-me .social-icons {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
 }
 
 .section-me .social-icon {
-  font-size: 36px; /* Increase icon size */
-  margin: 0 10px; /* Add space between icons */
+  font-size: 36px;
+  /* Increase icon size */
+  margin: 0 10px;
+  /* Add space between icons */
 }
 
 .section-me .icon-space {
   display: inline-block;
-  width: 40px; /* Adjust the space width */
+  width: 40px;
+  /* Adjust the space width */
 }
 
 .section-me h2 {
-  margin-top: 20px; /* Add space between icons and h2 */
-  font-size: 30px; /* Adjust the h2 font size */
-  position: absolute; /* Position absolute to move it to the top */
-  top: 10px; /* Adjust the top position */
+  margin-top: 20px;
+  /* Add space between icons and h2 */
+  font-size: 30px;
+  /* Adjust the h2 font size */
+  position: absolute;
+  /* Position absolute to move it to the top */
+  top: 10px;
+  /* Adjust the top position */
   left: 0;
   right: 0;
 }
@@ -2585,4 +2605,47 @@ footer {
 aside {
   background-color: #000;
   text-align: center;
+}
+
+h4.footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  font-size: 15px;
+  font-family: Courier, monospace;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top .arrow-gif {
+  width: 80px;
+  /* Set the width of your arrow GIF */
+  height: auto;
+
+  @media (max-width: 767px) {
+    width: 55px;
+    /* Width for phones */
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 80px;
+    /* Width for tablets */
+  }
+}
+
+.back-to-top:hover .text-box {
+  display: block;
+}
+
+.back-to-top.visible {
+  opacity: 1;
 }
